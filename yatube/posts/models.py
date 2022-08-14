@@ -9,11 +9,11 @@ class Group(models.Model):
     title = models.CharField(
         max_length=200,
         verbose_name="Наименование сообщества"
-        )
+    )
     slug = models.SlugField(
         unique=True,
         verbose_name="Наименование сообщества в адресе"
-        )
+    )
     description = models.TextField(verbose_name="Описание сообщества")
 
     def __str__(self):
@@ -25,7 +25,7 @@ class Post(models.Model):
     pub_date = models.DateTimeField(
         auto_now_add=True,
         verbose_name="Дата публикации поста"
-        )
+    )
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
